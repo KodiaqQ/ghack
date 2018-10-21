@@ -2,12 +2,12 @@ import pandas as pd
 
 
 class Data:
-    def __init__(self):
-        self.plan = pd.read_excel('data/1_plan.xls').drop(columns=['CEH'])
-        self.schedule = pd.read_excel('data/2_schedule.xls').drop(columns=['CEH'])
-        self.timing = pd.read_excel('data/4_timing.xls').drop(columns=['CEH'])
-        self.batch = pd.read_excel('data/5_batch.xls').drop(columns=['CEH'])
-        self.tools = pd.read_excel('data/3_tools.xls').drop(columns=['CEH'])
+    def __init__(self, plan_p, schedule_p, timing_p, batch_p, tools_p):
+        self.plan = pd.read_excel(plan_p).drop(columns=['CEH'])
+        self.schedule = pd.read_excel(schedule_p).drop(columns=['CEH'])
+        self.timing = pd.read_excel(timing_p).drop(columns=['CEH'])
+        self.batch = pd.read_excel(batch_p).drop(columns=['CEH'])
+        self.tools = pd.read_excel(tools_p).drop(columns=['CEH'])
 
     def get_plan(self):
         needle = self.make_unique()

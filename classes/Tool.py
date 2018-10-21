@@ -4,12 +4,12 @@ import math
 
 
 class Tool:
-    def __init__(self, id):
+    def __init__(self, id, plan_p, schedule_p, timing_p, batch_p, tools_p):
         self.id = id
         self.time_left = 16
         self.debt = 0
         self.debt_all = 0
-        self.details = Data().get_current_details()
+        self.details = Data(plan_p, schedule_p, timing_p, batch_p, tools_p).get_current_details()
         self.detail_t = 0
         self.detail_id = 0
 
